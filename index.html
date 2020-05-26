@@ -27,11 +27,22 @@
     <main>
         <div class="grid-container">
             <textarea name="plainText" id="plainText" cols="40" rows="40" placeholder="Enter your plain text here"></textarea>
-            <textarea name="plainText" id="plainText" cols="40" rows="40" readonly>print("")</textarea>
+            <textarea name="plainText" id="pythonCode" cols="40" rows="40" readonly>print("")</textarea>
         </div>
+        <button onclick="myFunction()">Copy text</button>
     </main>
 
     <script>
+        // EventListener for automatic copying to the clipboard
+        const outputArea = document.getElementById("plainText")
+        var clipboardText = outputArea.value
+        outputArea.addEventListener("mouseenter", (event) => {
+            outputArea.select();
+            outputArea.setSelectionRange(0, 99999); /*For mobile devices*/
+            document.execCommand("copy");
+            print(outputArea.value)
+        })
+
         function set(el, text) {
             while (el.firstChild) el.removeChild(el.firstChild);
             el.appendChild(document.createTextNode(text))
@@ -61,6 +72,8 @@
             }
             input.onkeydown = input.onkeyup = input.onclick = eventHandler;
         }
+
+
         setupUpdater();
         document.getElementsByTagName('textarea')[0].focus();
     </script>
