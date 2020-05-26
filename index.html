@@ -34,9 +34,14 @@
 
     <script>
         var outputText = ""
+        outputArea = document.getElementsByTagName('textarea')[1]
+
+        // Add eventListener for silent copying to clipboard
+        //outputArea.addEventListener("mouseenter", (event) => {
+        //   print("mouseover")
+        //})
 
         function copy() {
-            outputArea = document.getElementsByTagName('textarea')[1]
             var clipboardText = outputArea.value
             copyTextToClipboard(clipboardText)
         }
