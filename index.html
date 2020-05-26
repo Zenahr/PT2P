@@ -20,16 +20,120 @@
         gap: 0 0;
         grid-template-areas: ". . . . ." ". . . . ." ". . . . ." ". . . . ." ". . . . ." ". . . . ." ". . . . ." ". . . . .";
     }
+    /*SNACK BAR LOGIC*/
+    /* The snackbar - position it at the bottom and in the middle of the screen */
+    
+    #snackbar {
+        visibility: hidden;
+        /* Hidden by default. Visible on click */
+        min-width: 250px;
+        /* Set a default minimum width */
+        margin-left: -125px;
+        /* Divide value of min-width by 2 */
+        background-color: white;
+        /* Black background color */
+        color: #333;
+        /* White text color */
+        text-align: center;
+        /* Centered text */
+        padding: 16px;
+        position: fixed;
+        /* Sit on top of the screen */
+        z-index: 1;
+        /* Add a z-index if needed */
+        left: 50%;
+        /* Center the snackbar */
+        bottom: 30px;
+        /* 30px from the bottom */
+    }
+    /* Show the snackbar when clicking on a button (class added with JavaScript) */
+    
+    #snackbar.show {
+        visibility: visible;
+        /* Show the snackbar */
+        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.3s, fadeout 0.3s 1.7s;
+        animation: fadein 0.3s, fadeout 0.3s 1.7s;
+    }
+    /* Animations to fade the snackbar in and out */
+    
+    @-webkit-keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 1;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+    
+    .submit {
+        position: absolute;
+        margin-top: 30px;
+        right: 50px;
+    }
+    
+    .custom-button {
+        color: white;
+        background-color: rgb(82, 82, 82);
+        border: solid 1px rgb(34, 34, 34);
+        transition: all .23s;
+        padding: 22px 400px;
+    }
+    
+    .custom-button:hover {
+        color: white;
+        background-color: rgb(34, 34, 34);
+        border: solid 1px rgb(34, 34, 34);
+    }
 </style>
 
 <body>
+
+    <!-- snackbar -->
+    <div id="snackbar">CODE COPIED!</div>
 
     <main>
         <div class="grid-container">
             <textarea name="plainText" id="plainText" cols="40" rows="40" placeholder="Enter your plain text here"></textarea>
             <textarea name="plainText" id="pythonCode" cols="40" rows="40" readonly>print("")</textarea>
         </div>
-        <button id="button">Copy text</button>
+        <button id="button" class="custom-button submit">COPY CODE</button>
     </main>
 
     <script>
