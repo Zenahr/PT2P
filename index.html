@@ -121,12 +121,56 @@
         background-color: rgb(34, 34, 34);
         border: solid 1px rgb(34, 34, 34);
     }
+    
+    .head {
+        width: 100%;
+        height: 12%;
+        text-align: center;
+        margin-top: 12px;
+        font-weight: 400;
+    }
+    
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid rgb(124, 124, 124);
+        margin: 1em 0;
+        padding: 0;
+    }
+    
+    .footer {
+        width: 99vw;
+        position: absolute;
+        bottom: 8px;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 300;
+        cursor: default;
+    }
+    
+    a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        transition: all .2s;
+        font-size: larger;
+    }
+    
+    a:hover {
+        color: rgb(166, 134, 255);
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 
 <body>
 
     <!-- snackbar -->
     <div id="snackbar">CODE COPIED!</div>
+
+    <div class="head">
+        <p>Title</p>
+    </div>
 
     <main>
         <div class="grid-container">
@@ -135,6 +179,12 @@
         </div>
         <button id="button" class="custom-button submit">COPY CODE</button>
     </main>
+
+    <div class="footer">
+        <hr>
+        <p style="">Copyright &copy; 2020 Zenahr Barzani. All rights reserved.</p>
+        <a href="https://github.com/Zenahr/python-print-transform">Source Code</a>
+    </div>
 
     <script>
         const copyButton = document.getElementById("button")
