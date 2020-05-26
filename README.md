@@ -8,10 +8,6 @@
 [![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)  
 [![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)  
 
-[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/Zenahr/python-print-transform/issues/)  
-[![GitHub issues-closed](https://img.shields.io/github/issues-closed/Naereen/StrapDown.js.svg)](https://github.com/Zenahr/python-print-transform/issues?q=is%3Aissue+is%3Aclosed)
-
-
 # DEMO:
 ![video](https://user-images.githubusercontent.com/47085752/82933740-af165100-9f8a-11ea-9d28-0b636ce6c1fa.gif)
 
