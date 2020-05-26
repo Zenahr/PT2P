@@ -29,19 +29,25 @@
             <textarea name="plainText" id="plainText" cols="40" rows="40" placeholder="Enter your plain text here"></textarea>
             <textarea name="plainText" id="pythonCode" cols="40" rows="40" readonly>print("")</textarea>
         </div>
-        <button onclick="myFunction()">Copy text</button>
+        <button onclick="copy()">Copy text</button>
     </main>
 
     <script>
-        // EventListener for automatic copying to the clipboard
-        const outputArea = document.getElementById("plainText")
-        var clipboardText = outputArea.value
-        outputArea.addEventListener("mouseenter", (event) => {
-            outputArea.select();
-            outputArea.setSelectionRange(0, 99999); /*For mobile devices*/
-            document.execCommand("copy");
-            print(outputArea.value)
-        })
+        var outputText = ""
+
+        function copy() {
+            outputArea = document.getElementsByTagName('textarea')[1]
+            var clipboardText = outputArea.value
+            copyTextToClipboard(clipboardText)
+        }
+
+        function copyTextToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                console.log('Async: Copying to clipboard was successful!');
+            }, function(err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
 
         function set(el, text) {
             while (el.firstChild) el.removeChild(el.firstChild);
