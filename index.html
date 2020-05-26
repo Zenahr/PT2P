@@ -29,7 +29,7 @@
     <main>
         <div class="grid-container">
             <textarea name="plainText" id="plainText" cols="40" rows="40"></textarea>
-            <textarea name="plainText" id="plainText" cols="40" rows="40"></textarea>
+            <textarea name="plainText" id="plainText" cols="40" rows="40" readonly></textarea>
         </div>
         <div id="charCount"></div>
     </main>
@@ -53,7 +53,7 @@
 
         function setupUpdater() {
             var input = document.getElementsByTagName('textarea')[0],
-                count = document.getElementById('charCount'),
+                count = document.getElementsByTagName('textarea')[1],
                 oldText = input.value,
                 timeout = null;
 
