@@ -29,10 +29,24 @@
             <textarea name="plainText" id="plainText" cols="40" rows="40" placeholder="Enter your plain text here"></textarea>
             <textarea name="plainText" id="pythonCode" cols="40" rows="40" readonly>print("")</textarea>
         </div>
-        <button onclick="copy()">Copy text</button>
+        <button id="button">Copy text</button>
     </main>
 
     <script>
+        const copyButton = document.getElementById("button")
+        copyButton.addEventListener("click", (evet) => {
+                copy();
+                showSnackBar();
+            })
+            // SnackBar Logic
+        function showSnackBar() {
+            const snackbar = document.getElementById("snackbar");
+            snackbar.classList.add("show")
+            setTimeout(function() {
+                snackbar.classList.remove("show")
+            }, 2000)
+        }
+
         var outputText = ""
         outputArea = document.getElementsByTagName('textarea')[1]
 
