@@ -38,7 +38,6 @@
         /* A convenience function to reverse a string, and 
          * one to set the content of an element.
          */
-
         function reverse(s) {
             return s.split('').reverse().join('')
         }
@@ -53,17 +52,17 @@
 
         function setupUpdater() {
             var input = document.getElementsByTagName('textarea')[0],
-                count = document.getElementsByTagName('textarea')[1],
+                output = document.getElementsByTagName('textarea')[1],
                 oldText = input.value,
                 timeout = null;
 
             /* handleChange is called 50ms after the user stops 
                typing. */
             function handleChange() {
-                var newText = input.value;
-                if (newText == oldText) return;
-                else oldText = newText;
-                set(count, 'You entered ' + newText.length + ' characters.');
+                var inputText = input.value;
+                if (inputText == oldText) return;
+                else oldText = inputText;
+                set(output, "print(\"" + inputText + "\")");
             }
 
             /* eventHandler is called on keyboard and mouse events.
