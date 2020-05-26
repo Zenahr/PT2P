@@ -22,26 +22,16 @@
     }
 </style>
 
-
-
 <body>
 
     <main>
         <div class="grid-container">
             <textarea name="plainText" id="plainText" cols="40" rows="40" placeholder="Enter your plain text here"></textarea>
-            <textarea name="plainText" id="plainText" cols="40" rows="40">print("")</textarea>
+            <textarea name="plainText" id="plainText" cols="40" rows="40" readonly>print("")</textarea>
         </div>
-        <div id="charCount"></div>
     </main>
 
     <script>
-        /* A convenience function to reverse a string, and 
-         * one to set the content of an element.
-         */
-        function reverse(s) {
-            return s.split('').reverse().join('')
-        }
-
         function set(el, text) {
             while (el.firstChild) el.removeChild(el.firstChild);
             el.appendChild(document.createTextNode(text))
@@ -53,31 +43,24 @@
         function setupUpdater() {
             var input = document.getElementsByTagName('textarea')[0],
                 output = document.getElementsByTagName('textarea')[1],
-                oldText = input.value,
                 timeout = null;
 
-            /* handleChange is called 50ms after the user stops 
-               typing. */
             function handleChange() {
                 //string.replace(/[\n]/g, '\n')
                 var inputText = input.value;
                 set(output, "print(\"" + inputText + "\")");
-                var bool = inputText.includes("\n");
-                console.log(bool)
-
+                ("\n");
             }
 
             /* eventHandler is called on keyboard and mouse events.
                If there is a pending timeout, it cancels it.
-               It sets a timeout to call handleChange in 50ms. */
+               It sets a timeout to call handleChange in 0ms. */
             function eventHandler() {
                 if (timeout) clearTimeout(timeout);
                 timeout = setTimeout(handleChange, 0);
             }
-
             input.onkeydown = input.onkeyup = input.onclick = eventHandler;
         }
-
         setupUpdater();
         document.getElementsByTagName('textarea')[0].focus();
     </script>

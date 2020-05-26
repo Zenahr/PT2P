@@ -1,0 +1,9 @@
+print("sfjlksdjflwekfj
+weiofjweiofwejfof
+joiwejfweiofj
+wejiofjwefe
+wjoijfiowejf
+jwefjweoif
+jwefjio
+wefjwi
+efj")
