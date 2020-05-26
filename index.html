@@ -28,8 +28,8 @@
 
     <main>
         <div class="grid-container">
-            <textarea name="plainText" id="plainText" cols="40" rows="40"></textarea>
-            <textarea name="plainText" id="plainText" cols="40" rows="40" readonly></textarea>
+            <textarea name="plainText" id="plainText" cols="40" rows="40" placeholder="Enter your plain text here"></textarea>
+            <textarea name="plainText" id="plainText" cols="40" rows="40">print("")</textarea>
         </div>
         <div id="charCount"></div>
     </main>
@@ -59,10 +59,12 @@
             /* handleChange is called 50ms after the user stops 
                typing. */
             function handleChange() {
+                //string.replace(/[\n]/g, '\n')
                 var inputText = input.value;
-                if (inputText == oldText) return;
-                else oldText = inputText;
                 set(output, "print(\"" + inputText + "\")");
+                var bool = inputText.includes("\n");
+                console.log(bool)
+
             }
 
             /* eventHandler is called on keyboard and mouse events.
