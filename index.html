@@ -48,7 +48,7 @@
             function handleChange() {
                 //string.replace(/[\n]/g, '\n')
                 var inputText = input.value;
-                set(output, "print(\"" + inputText + "\")");
+                set(output, `print("${input.value.replace(/\n/g, '\\n').replace(/"/g, '\\"')}")`);
                 ("\n");
             }
 
