@@ -9,7 +9,7 @@
 
 <style>
     body {
-        background-color: #3b3b3b;
+        background-color: #2a2a2a;
         color: white;
     }
     
@@ -25,26 +25,18 @@
     
     #snackbar {
         visibility: hidden;
-        /* Hidden by default. Visible on click */
         min-width: 250px;
-        /* Set a default minimum width */
         margin-left: -125px;
-        /* Divide value of min-width by 2 */
-        background-color: white;
-        /* Black background color */
-        color: #333;
-        /* White text color */
+        background-color: rgb(166, 134, 255);
+        color: white;
         text-align: center;
-        /* Centered text */
         padding: 16px;
         position: fixed;
-        /* Sit on top of the screen */
         z-index: 1;
-        /* Add a z-index if needed */
         left: 50%;
-        /* Center the snackbar */
-        bottom: 30px;
-        /* 30px from the bottom */
+        bottom: 70px;
+        font-size: 12px;
+        font-weight: 300;
     }
     /* Show the snackbar when clicking on a button (class added with JavaScript) */
     
@@ -64,7 +56,7 @@
             opacity: 0;
         }
         to {
-            bottom: 30px;
+            bottom: 70px;
             opacity: 1;
         }
     }
@@ -75,14 +67,14 @@
             opacity: 0;
         }
         to {
-            bottom: 30px;
+            bottom: 70px;
             opacity: 1;
         }
     }
     
     @-webkit-keyframes fadeout {
         from {
-            bottom: 30px;
+            bottom: 70px;
             opacity: 1;
         }
         to {
@@ -93,7 +85,7 @@
     
     @keyframes fadeout {
         from {
-            bottom: 30px;
+            bottom: 70px;
             opacity: 1;
         }
         to {
@@ -109,17 +101,19 @@
     }
     
     .custom-button {
-        color: white;
+        color: rgb(166, 134, 255);
         background-color: rgb(82, 82, 82);
-        border: solid 1px rgb(34, 34, 34);
+        border: solid 1px rgb(166, 134, 255);
         transition: all .23s;
-        padding: 22px 400px;
+        padding: 22px 380px;
+        font-size: 16px;
+        font-weight: 500;
     }
     
     .custom-button:hover {
         color: white;
-        background-color: rgb(34, 34, 34);
-        border: solid 1px rgb(34, 34, 34);
+        background-color: rgb(166, 134, 255);
+        border: solid 1px rgb(166, 134, 255);
     }
     
     .head {
