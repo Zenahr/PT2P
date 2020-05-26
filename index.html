@@ -10,6 +10,7 @@
 <style>
     body {
         background-color: #3b3b3b;
+        color: white;
     }
     
     .grid-container {
@@ -30,7 +31,56 @@
             <textarea name="plainText" id="plainText" cols="40" rows="40"></textarea>
             <textarea name="plainText" id="plainText" cols="40" rows="40"></textarea>
         </div>
+        <div id="charCount"></div>
     </main>
+
+    <script>
+        /* A convenience function to reverse a string, and 
+         * one to set the content of an element.
+         */
+
+        function reverse(s) {
+            return s.split('').reverse().join('')
+        }
+
+        function set(el, text) {
+            while (el.firstChild) el.removeChild(el.firstChild);
+            el.appendChild(document.createTextNode(text))
+        }
+
+        /* setupUpdater will be called once, on page load.
+         */
+
+        function setupUpdater() {
+            var input = document.getElementsByTagName('textarea')[0],
+                count = document.getElementById('charCount'),
+                oldText = input.value,
+                timeout = null;
+
+            /* handleChange is called 50ms after the user stops 
+               typing. */
+            function handleChange() {
+                var newText = input.value;
+                if (newText == oldText) return;
+                else oldText = newText;
+                set(count, 'You entered ' + newText.length + ' characters.');
+            }
+
+            /* eventHandler is called on keyboard and mouse events.
+               If there is a pending timeout, it cancels it.
+               It sets a timeout to call handleChange in 50ms. */
+            function eventHandler() {
+                if (timeout) clearTimeout(timeout);
+                timeout = setTimeout(handleChange, 0);
+            }
+
+            input.onkeydown = input.onkeyup = input.onclick = eventHandler;
+        }
+
+        setupUpdater();
+        document.getElementsByTagName('textarea')[0].focus();
+    </script>
+
 </body>
 
 </html>
