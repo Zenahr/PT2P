@@ -1,4 +1,4 @@
-### Plain Text to Python: A simple, free and easy-to-use text-to-print() online converter 「 PT2P 」
+### Plain Text to Python: A simple, free and easy-to-use text-to-print() online converter 「PT2P」
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-Blue.svg)](https://shields.io/)
