@@ -48,10 +48,10 @@
             function handleChange() {
                 //string.replace(/[\n]/g, '\n')
                 var inputText = input.value;
-                set(output, `print("${input.value.replace(/\n/g, '\\n').replace(/"/g, '\\"')}")`);
+                outputText = `print("${input.value.replace(/\n/g, '\\n').replace(/"/g, '\\\"')}")`
+                set(output, outputText);
                 ("\n");
             }
-
             /* eventHandler is called on keyboard and mouse events.
                If there is a pending timeout, it cancels it.
                It sets a timeout to call handleChange in 0ms. */
